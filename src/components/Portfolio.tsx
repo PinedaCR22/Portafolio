@@ -1,8 +1,17 @@
 import React from 'react';
 
-export const Portfolio: React.FC = () => {
+interface PortfolioProps {
+  isLightMode: boolean;
+}
+
+export const Portfolio: React.FC<PortfolioProps> = ({ isLightMode }) => {
   return (
-    <section id="portfolio" className="py-16 bg-gray-900 text-white">
+    <section
+      id="portfolio"
+      className={`py-16 transition-colors duration-500 ${
+        isLightMode ? 'bg-white text-black' : 'bg-gray-900 text-white'
+      }`}
+    >
       <div className="container mx-auto px-4">
         {/* Título */}
         <h2 className="text-3xl font-bold mb-8 text-center">My Portfolio</h2>
@@ -10,7 +19,9 @@ export const Portfolio: React.FC = () => {
         {/* Contenedor de tarjetas */}
         <div className="grid gap-8 md:grid-cols-3">
           {/* Tarjeta 1 */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div className={`p-6 rounded-lg shadow hover:shadow-lg transition ${
+            isLightMode ? 'bg-gray-200 text-black' : 'bg-gray-800 text-white'
+          }`}>
             <div className="mb-4">
               <img
                 src="https://via.placeholder.com/300x200"
@@ -31,7 +42,9 @@ export const Portfolio: React.FC = () => {
           </div>
 
           {/* Tarjeta 2 */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div className={`p-6 rounded-lg shadow hover:shadow-lg transition ${
+            isLightMode ? 'bg-gray-200 text-black' : 'bg-gray-800 text-white'
+          }`}>
             <div className="mb-4">
               <img
                 src="https://via.placeholder.com/300x200"
@@ -52,7 +65,9 @@ export const Portfolio: React.FC = () => {
           </div>
 
           {/* Tarjeta 3 */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div className={`p-6 rounded-lg shadow hover:shadow-lg transition ${
+            isLightMode ? 'bg-gray-200 text-black' : 'bg-gray-800 text-white'
+          }`}>
             <div className="mb-4">
               <img
                 src="https://via.placeholder.com/300x200"
@@ -71,8 +86,6 @@ export const Portfolio: React.FC = () => {
               View Project
             </a>
           </div>
-
-          {/* Agrega más tarjetas si lo requieres */}
         </div>
       </div>
     </section>

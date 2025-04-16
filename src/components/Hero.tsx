@@ -39,15 +39,7 @@ export const Hero: React.FC = () => {
         {/* Sección de "contactos" o íconos de redes, si lo deseas */}
         <div className="mt-8 flex space-x-4">
           <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-blue-400 transition-colors"
-          >
-            Twitter
-          </a>
-          <a
-            href="https://github.com/PinedaCR10"
+            href="https://github.com/PinedaCR22"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-gray-300 transition-colors"
