@@ -19,7 +19,7 @@ export const Header: React.FC = () => {
       <nav className="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
         {/* Logo o nombre */}
         <div className="text-2xl font-bold text-gray-800">
-          JuniorDeveloper
+          Developer
         </div>
 
         {/* Menú en pantallas medianas/grandes */}
