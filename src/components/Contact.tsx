@@ -28,7 +28,6 @@ export const Contact: React.FC<ContactProps> = ({ isLightMode }) => {
     };
 
     setErrors(newErrors);
-
     const isValid = Object.values(newErrors).every((err) => err === '');
 
     if (isValid) {
@@ -56,11 +55,11 @@ export const Contact: React.FC<ContactProps> = ({ isLightMode }) => {
               placeholder="Your Name"
               value={formData.name}
               onChange={handleChange}
-              className={`font-['Press_Start_2P'] text-xs w-full p-3 bg-gray-800 rounded border-2 ${
-                errors.name ? 'border-red-500' : 'focus:border-blue-400'
-              } focus:outline-none focus:ring-2 focus:ring-blue-600 ${
-                formData.name ? 'text-blue-400' : ''
-              }`}
+              className={`font-['Press_Start_2P'] text-xs w-full p-3 rounded border-2 placeholder-gray-400 ${
+                isLightMode
+                  ? `bg-white text-gray-700 border-gray-400 ${formData.name ? 'text-blue-500' : ''}`
+                  : `bg-gray-800 text-blue-400`
+              } ${errors.name ? 'border-red-500' : 'focus:border-blue-400'} focus:outline-none focus:ring-2 focus:ring-blue-600`}
             />
             {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
           </div>
@@ -73,11 +72,11 @@ export const Contact: React.FC<ContactProps> = ({ isLightMode }) => {
               placeholder="Email Address"
               value={formData.email}
               onChange={handleChange}
-              className={`font-['Press_Start_2P'] text-xs w-full p-3 bg-gray-800 rounded border-2 ${
-                errors.email ? 'border-red-500' : 'focus:border-blue-400'
-              } focus:outline-none focus:ring-2 focus:ring-blue-600 ${
-                formData.email ? 'text-blue-400' : ''
-              }`}
+              className={`font-['Press_Start_2P'] text-xs w-full p-3 rounded border-2 placeholder-gray-400 ${
+                isLightMode
+                  ? `bg-white text-gray-700 border-gray-400 ${formData.email ? 'text-blue-500' : ''}`
+                  : `bg-gray-800 text-blue-400`
+              } ${errors.email ? 'border-red-500' : 'focus:border-blue-400'} focus:outline-none focus:ring-2 focus:ring-blue-600`}
             />
             {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
           </div>
@@ -89,11 +88,11 @@ export const Contact: React.FC<ContactProps> = ({ isLightMode }) => {
               placeholder="Write Message Here..."
               value={formData.message}
               onChange={handleChange}
-              className={`font-['Press_Start_2P'] text-xs w-full p-3 bg-gray-800 rounded h-32 resize-none border-2 ${
-                errors.message ? 'border-red-500' : 'focus:border-blue-400'
-              } focus:outline-none focus:ring-2 focus:ring-blue-600 ${
-                formData.message ? 'text-blue-400' : ''
-              }`}
+              className={`font-['Press_Start_2P'] text-xs w-full p-3 rounded h-32 resize-none border-2 placeholder-gray-400 ${
+                isLightMode
+                  ? `bg-white text-gray-700 border-gray-400 ${formData.message ? 'text-blue-500' : ''}`
+                  : `bg-gray-800 text-blue-400`
+              } ${errors.message ? 'border-red-500' : 'focus:border-blue-400'} focus:outline-none focus:ring-2 focus:ring-blue-600`}
             />
             {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
           </div>

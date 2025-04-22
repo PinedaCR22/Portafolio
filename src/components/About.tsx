@@ -9,7 +9,7 @@ export const About: React.FC = () => {
           <div className="relative">
             <div className="absolute inset-0 rounded-full border-4 border-blue-500 animate-pulse opacity-75" />
             <img
-              src="https://via.placeholder.com/300x300" // Reemplaza con tu imagen
+              src="/images/PERFIL.jpg"
               alt="Profile"
               className="relative z-10 w-64 h-64 object-cover rounded-full border-4 border-gray-200"
             />
@@ -28,26 +28,21 @@ export const About: React.FC = () => {
             I am Product Designer &amp; Web Developer
           </h2>
           <ul className="text-gray-600 mb-6 space-y-2">
-            <li>
-              <strong>Experience:</strong> 3 years
-            </li>
-            <li>
-              <strong>Profession:</strong> Student at National University
-            </li>
-            <li>
-              <strong>Address:</strong> Guanacaste, Costa Rica
-            </li>
-            <li>
-              <strong>Phone:</strong> +506-8504-2171
-            </li>
-            <li>
-              <strong>Email:</strong> emmapr2233@gmail.com
-            </li>
+            <li><strong>Experience:</strong> 3 years</li>
+            <li><strong>Profession:</strong> Student at National University</li>
+            <li><strong>Address:</strong> Guanacaste, Costa Rica</li>
+            <li><strong>Phone:</strong> +506-8504-2171</li>
+            <li><strong>Email:</strong> emmapr2233@gmail.com</li>
           </ul>
-          <button className="
-            bg-blue-600 text-white py-2 px-6 rounded shadow 
-            hover:bg-blue-500 transition-colors
-          ">
+          <button
+            onClick={() => {
+              const portfolioSection = document.getElementById('portfolio');
+              if (portfolioSection) {
+                portfolioSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="bg-blue-600 text-white py-2 px-6 rounded shadow hover:bg-blue-500 transition-colors"
+          >
             View All Projects
           </button>
         </div>

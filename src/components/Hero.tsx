@@ -2,32 +2,36 @@ import React from 'react';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative w-full h-[600px]">
+    <section id="home" className="relative w-full h-[600px] overflow-hidden">
       {/* Imagen de fondo */}
       <img
-        src="C:\Users\emman\Desktop\UNA\Fundamentos progra web\Portafolio\proyecto1\src\images\que-hace-programador.jpg" // Reemplaza con tu imagen real
+        src="/images/PORTADA.jpg"
         alt="Hero background"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover z-0"
       />
 
-      {/* Capa oscura semitransparente para mejor contraste */}
-      <div className="absolute inset-0 bg-black bg-opacity-40" />
+      {/* Capa borrosa + oscura encima de la imagen */}
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-10" />
 
-      {/* Contenido superpuesto */}
-      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full text-white">
+      {/* Contenido centrado y por encima de todo */}
+      <div className="relative z-20 flex flex-col items-center justify-center w-full h-full text-white text-center px-4">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Emmanuel Pineda</h1>
-        <p className="text-lg md:text-xl mb-6">
-          Frontend Developer &amp; UI/UX Enthusiast
-        </p>
+        <p className="text-lg md:text-xl mb-6">Frontend Developer &amp; UI/UX Enthusiast</p>
 
-        {/* Botones o links de ejemplo */}
-        <div className="flex space-x-4">
-          <a
-            href="#contratar"
+        {/* Botones */}
+        <div className="flex space-x-4 flex-wrap justify-center">
+          <button
+            onClick={() => {
+              const aboutSection = document.getElementById('about');
+              if (aboutSection) {
+                aboutSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
             className="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded transition-colors"
           >
-            Here Me
-          </a>
+            About Me
+          </button>
+
           <a
             href="#cv"
             className="border border-white px-4 py-2 rounded hover:bg-white hover:text-black transition-colors"
@@ -36,7 +40,7 @@ export const Hero: React.FC = () => {
           </a>
         </div>
 
-        {/* Sección de "contactos" o íconos de redes, si lo deseas */}
+        {/* Redes sociales */}
         <div className="mt-8 flex space-x-4">
           <a
             href="https://github.com/PinedaCR22"
